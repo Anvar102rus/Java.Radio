@@ -5,12 +5,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
+    Radio Radio = new Radio();
+
     //среднее значение звука
     @Test
     void shouldcurrentVolume() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(5);
-        int expected = 5;
+        cond.setcurrentVolume(50);
+        int expected = 50;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -18,9 +20,9 @@ class RadioTest {
     @Test
     void shouldOverVolumeMax() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(12);
+        cond.setcurrentVolume(55);
         cond.increaseVolume();
-        int expected =6;
+        int expected =56;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -30,7 +32,7 @@ class RadioTest {
         Radio cond = new Radio();
         cond.setcurrentVolume(-10);
         cond.decreaseVolume();
-        int expected = 4;
+        int expected = 49;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -39,7 +41,7 @@ class RadioTest {
     void shouldincreaseVolume() {
         Radio cond = new Radio();
         cond.increaseVolume();
-        int expected = 6;
+        int expected = 51;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -48,7 +50,7 @@ class RadioTest {
     void shoulddecreaseVolume() {
         Radio cond = new Radio();
         cond.decreaseVolume();
-        int expected = 4;
+        int expected = 49;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -56,9 +58,9 @@ class RadioTest {
     @Test
     void shoildincreaseVolumeMax() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(10);
+        cond.setcurrentVolume(101);
         cond.increaseVolume();
-        int expected = 10;
+        int expected = 51;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
 
