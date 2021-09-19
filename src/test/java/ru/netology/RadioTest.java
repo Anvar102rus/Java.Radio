@@ -17,12 +17,14 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
+
+
     @Test
     void shouldOverVolumeMax() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(55);
+        cond.setcurrentVolume(102);
         cond.increaseVolume();
-        int expected =56;
+        int expected =51;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -58,9 +60,9 @@ class RadioTest {
     @Test
     void shoildincreaseVolumeMax() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(101);
+        cond.setcurrentVolume(100);
         cond.increaseVolume();
-        int expected = 51;
+        int expected = 100;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
 
@@ -157,6 +159,15 @@ class RadioTest {
         cond.setchangeTheStationByPrey();
         int expected = 9;
         int actual = cond.getcurrentRadioStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldAmountRadioStation() {
+        Radio cond = new Radio(8);
+        int amountRadioStation = 10;
+        int expected = 10;
+        int actual = amountRadioStation; 
         assertEquals(expected, actual);
     }
 
