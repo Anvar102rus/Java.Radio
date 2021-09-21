@@ -5,22 +5,28 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
+    Radio Radio = new Radio();
+    private int amountRadioStation;
+    private int maximumRadioStation;
+
     //среднее значение звука
     @Test
     void shouldcurrentVolume() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(5);
-        int expected = 5;
+        cond.setcurrentVolume(50);
+        int expected = 50;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
 
+
+
     @Test
     void shouldOverVolumeMax() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(12);
+        cond.setcurrentVolume(102);
         cond.increaseVolume();
-        int expected =6;
+        int expected =51;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -30,7 +36,7 @@ class RadioTest {
         Radio cond = new Radio();
         cond.setcurrentVolume(-10);
         cond.decreaseVolume();
-        int expected = 4;
+        int expected = 49;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -39,7 +45,7 @@ class RadioTest {
     void shouldincreaseVolume() {
         Radio cond = new Radio();
         cond.increaseVolume();
-        int expected = 6;
+        int expected = 51;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -48,7 +54,7 @@ class RadioTest {
     void shoulddecreaseVolume() {
         Radio cond = new Radio();
         cond.decreaseVolume();
-        int expected = 4;
+        int expected = 49;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
     }
@@ -56,9 +62,9 @@ class RadioTest {
     @Test
     void shoildincreaseVolumeMax() {
         Radio cond = new Radio();
-        cond.setcurrentVolume(10);
+        cond.setcurrentVolume(100);
         cond.increaseVolume();
-        int expected = 10;
+        int expected = 100;
         int actual = cond.getcurrentVolume();
         assertEquals(expected, actual);
 
@@ -154,6 +160,23 @@ class RadioTest {
         cond.setcurrentRadioStation(0);
         cond.setchangeTheStationByPrey();
         int expected = 9;
+        int actual = cond.getcurrentRadioStation();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldAmountRadioStation() {
+        Radio cond = new Radio(8);
+        int amountRadioStation = 10;
+        int expected = 10;
+        int actual = amountRadioStation; 
+        assertEquals(expected, actual);
+    }
+    @Test
+    void shouldNewRadioTest() {
+        Radio cond = new Radio(20);
+        cond.setcurrentRadioStation(15);
+        int expected = 15;
         int actual = cond.getcurrentRadioStation();
         assertEquals(expected, actual);
     }
