@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
     Radio Radio = new Radio();
+    private int amountRadioStation;
+    private int maximumRadioStation;
 
     //среднее значение звука
     @Test
@@ -174,7 +176,7 @@ class RadioTest {
     void shouldNewRadioTest() {
         Radio cond = new Radio(20);
         cond.setcurrentRadioStation(15);
-        int expected = 9;
+        int expected = 15;
         int actual = cond.getcurrentRadioStation();
         assertEquals(expected, actual);
     }
