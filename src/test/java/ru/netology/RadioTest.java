@@ -170,5 +170,13 @@ class RadioTest {
         int actual = amountRadioStation; 
         assertEquals(expected, actual);
     }
+    @Test
+    void shouldNewRadioTest() {
+        Radio cond = new Radio(20);
+        cond.setcurrentRadioStation(15);
+        int expected = 9;
+        int actual = cond.getcurrentRadioStation();
+        assertEquals(expected, actual);
+    }
 
 }
